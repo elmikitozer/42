@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 19:09:58 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/12 13:28:43 by myevou           ###   ########.fr       */
+/*   Created: 2023/09/12 13:28:59 by myevou            #+#    #+#             */
+/*   Updated: 2023/09/14 15:49:40 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	is_found(const char *str, const char *to_find)
+int	atoi(const char *str)
 {
 	int	i;
+	int sign;
+	int nb;
 
+	nb = 0;
 	i = 0;
-	while (to_find[i])
+	sign = 1;
+	while (str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (to_find[i] != str[i])
-			return (0);
+		if (str[i] == '-')
+			sign = -1;
+		else
+			sign = 1;
 		i++;
 	}
-	return (1);
-}
-
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
-{
-	if (!s2[0])
-		return (s1);
-	while (*s1 && len)
-	{
-		if (s1[0] == s2[0] && is_found(s1, s2) != 0)
-			return (s1);
-		s1++;
-		len--;
-	}
-	return (0);
+	while (str[i])
+		nb = nb * 10 + ((str[i] + '0') * sign);
 }
