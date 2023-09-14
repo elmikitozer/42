@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 13:28:59 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/14 15:53:17 by myevou           ###   ########.fr       */
+/*   Created: 2023/09/14 16:25:07 by myevou            #+#    #+#             */
+/*   Updated: 2023/09/14 17:18:54 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *str)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	char		*dp;
+	const char	*sp;
 
-	nb = 0;
-	i = 0;
-	sign = 1;
-	while (str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (!dst && !src)
+		return (0);
+	if (n == 0 || (dst == src))
+		return (dst);
+	dp = (char *)dst;
+	sp = (const char *)src;
+	while (n != 0)
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		if (*dp != *sp)
+			*dp = *sp;
+		dp++;
+		sp++;
+		n--;
 	}
-	while (str[i])
-		nb = nb * 10 + ((str[i] + '0') * sign);
+	return (dst);
 }

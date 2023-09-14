@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 13:28:59 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/14 15:53:17 by myevou           ###   ########.fr       */
+/*   Created: 2023/09/14 16:12:44 by myevou            #+#    #+#             */
+/*   Updated: 2023/09/14 16:22:00 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *str)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	size_t			i;
+	unsigned char	*res;
 
-	nb = 0;
 	i = 0;
-	sign = 1;
-	while (str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i])
-		nb = nb * 10 + ((str[i] + '0') * sign);
+	res = (unsigned char *) s;
+	while (i < n)
+		res[i++] = 0;
+	s = res;
 }
