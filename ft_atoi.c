@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:28:59 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/14 15:53:17 by myevou           ###   ########.fr       */
+/*   Updated: 2023/09/19 12:28:33 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ int	atoi(const char *str)
 	}
 	while (str[i])
 		nb = nb * 10 + ((str[i] + '0') * sign);
+	return (nb);
 }

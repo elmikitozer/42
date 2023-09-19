@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 16:25:07 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 13:14:11 by myevou           ###   ########.fr       */
+/*   Created: 2023/09/19 15:28:53 by myevou            #+#    #+#             */
+/*   Updated: 2023/09/19 15:35:41 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strtrim(const char *s1, char const *set)
 {
-	size_t	i;
+	int	count;
+	int	i;
+	int	j;
 
-	i = 0;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	while (i < n)
-		*(unsigned char *)(dst + i++) = *(unsigned char *)(src++);
-	return (dst);
+	int i = 0;
+	count = 1;
+	while (s1[i])
+	{
+		while (set[j])
+			{
+				if (s1[i] == set[j])
+			{
+				count++;
+				break ;
+			}
+			j++;
+			}
+	}
 }

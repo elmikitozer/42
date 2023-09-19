@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 16:25:07 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 13:14:11 by myevou           ###   ########.fr       */
+/*   Created: 2023/09/19 14:48:34 by myevou            #+#    #+#             */
+/*   Updated: 2023/09/19 15:34:10 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*res;
+	int		i;
+	int		j;
 
-	i = 0;
-	if (dst == NULL && src == NULL)
+	if (!s1 || !s2)
 		return (NULL);
-	while (i < n)
-		*(unsigned char *)(dst + i++) = *(unsigned char *)(src++);
-	return (dst);
+	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+		res[i] = s1[i++];
+	j = 0;
+	while (s2[j])
+		res[i + j] = s2 [j++];
+	res[i + j] = 0;
 }

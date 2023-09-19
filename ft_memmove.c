@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 16:25:07 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 13:14:11 by myevou           ###   ########.fr       */
+/*   Created: 2023/09/19 12:30:14 by myevou            #+#    #+#             */
+/*   Updated: 2023/09/19 13:15:09 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*ptr;
+	unsigned char	*ptr2;
 
+	ptr = (unsigned char *)dst;
+	ptr2 = (unsigned char *)src;
 	i = 0;
-	if (dst == NULL && src == NULL)
+	if (ptr == NULL && ptr2 == NULL)
 		return (NULL);
-	while (i < n)
-		*(unsigned char *)(dst + i++) = *(unsigned char *)(src++);
+	if (ptr2 < ptr)
+		while (++i <= len)
+			ptr[len - i] = ptr2[len - i];
+	else
+		while (len-- > 0)
+			*(ptr++) = *(ptr2++);
 	return (dst);
 }
