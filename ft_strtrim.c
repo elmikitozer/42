@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:28:53 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/20 18:48:24 by myevou           ###   ########.fr       */
+/*   Updated: 2023/09/22 17:03:22 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_strtrim(const char *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
-	size_t	k;
+	size_t	len;
 	char	*dest;
 
 	if (!s1)
@@ -59,20 +59,12 @@ char	*ft_strtrim(const char *s1, char const *set)
 	count = 1;
 	while (ischar(s1[i]), set)
 		i++;
+	j = 0;
 	if (i == len)
 		dest = malloc(1);
 	else
-		dest = trim_end
-	{
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-			{
-				count++;
-				break ;
-			}
-			j++;
-		}
-		i++;
-	}
+		dest = trim_end(s1, set, &j, i);
+	if (dest)
+		*(dst[j]) = 0;
+
 }
