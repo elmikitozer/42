@@ -6,14 +6,13 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:45:24 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/22 18:49:28 by myevou           ###   ########.fr       */
+/*   Updated: 2023/09/22 18:59:55 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (s)

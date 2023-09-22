@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:28:15 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/22 18:31:39 by myevou           ###   ########.fr       */
+/*   Updated: 2023/09/22 18:58:26 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	fr[i] = 0;
 	return (fr);
-
 }
