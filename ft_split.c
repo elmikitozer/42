@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:52:23 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 17:04:45 by myevou           ###   ########.fr       */
+/*   Updated: 2023/09/29 15:05:18 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static int	freedfromdesire(char **split, int size)
 	return (-1);
 }
 
-static int	is_sep(char p, char c)
-{
-	if (p == c || p == 0)
-		return (1);
-	return (0);
-}
+// static int	is_sep(char p, char c)
+// {
+// 	if (p == c || p == 0)
+// 		return (1);
+// 	return (0);
+// }
 
 static int	count_lines(char *str, char sep)
 {
@@ -34,8 +34,8 @@ static int	count_lines(char *str, char sep)
 	i = 0;
 	while (str[i] != 0)
 	{
-		if (char_is_separator(str[i + 1], sep) == 1
-			&& char_is_separator(str[i], sep) == 0)
+		if (((str[i + 1] == sep) || str[i + 1])
+			&& (str[i] != sep && str[i] != 0))
 			lines++;
 		i++;
 	}
@@ -47,7 +47,7 @@ static void	write_line(char *res, const char *s, char c)
 	int	i;
 
 	i = 0;
-	while (is_sep(s[i], c))
+	while ((s[i] == c) || s[i])
 	{
 		res[i] = s[i];
 		i++;

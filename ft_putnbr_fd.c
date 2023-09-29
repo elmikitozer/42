@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 18:45:24 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/22 19:00:19 by myevou           ###   ########.fr       */
+/*   Created: 2023/09/29 14:31:11 by myevou            #+#    #+#             */
+/*   Updated: 2023/09/29 14:41:50 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	i;
+	long long int	nb;
 
-	i = 0;
-	if (s)
+	nb = n;
+	if (nb < 0)
 	{
-		while (s[i])
-		{
-			(*f)(i, s[i]);
-			i++;
-		}
+		ft_putchar_fd('-', fd);
+		nb = -nb;
 	}
+	if (nb >= 10)
+		ft_putnbr_fd((nb / 10), fd);
+	ft_putchar_fd((nb % 10 + '0'), fd);
 }
