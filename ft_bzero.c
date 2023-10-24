@@ -6,9 +6,11 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:12:44 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/14 16:22:00 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 17:33:44 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

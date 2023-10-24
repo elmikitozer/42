@@ -6,28 +6,56 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:28:59 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 12:28:33 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 18:52:40 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *str)
-{
-	int	i;
-	int	sign;
-	int	nb;
+#include "libft.h"
 
-	nb = 0;
-	i = 0;
+// int	ft_atoi(const char *str)
+// {
+// 	int	i;
+// 	int	sign;
+// 	int	nb;
+
+// 	nb = 0;
+// 	i = 0;
+// 	sign = 1;
+// 	while (str[i] == ' ')
+// 		i++;
+// 	if (str[i] == '-' || str[i] == '+')
+// 	{
+// 		if (str[i] == '-')
+// 			sign = -1;
+// 		i++;
+// 	}
+// 	while (str[i])
+// 		nb = nb * 10 + ((str[i] + '0') * sign);
+// 	return (nb);
+// }
+
+int	ft_atoi(const char *str)
+{
+	int		nbr;
+	int		sign;
+	size_t	i;
+
+	nbr = 0;
 	sign = 1;
-	while (str[i] == ' ')
+	i = 0;
+	while (str[i] == ' ' || ('\t' <= str[i] && str[i] <= '\r'))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
-		if (str[i] == '-')
-			sign = -1;
+		sign *= -1;
 		i++;
 	}
-	while (str[i])
-		nb = nb * 10 + ((str[i] + '0') * sign);
-	return (nb);
+	while ('0' <= str[i] && str[i] <= '9')
+	{
+		nbr = nbr * 10 + str[i] - '0';
+		i++;
+	}
+	return (nbr * sign);
 }

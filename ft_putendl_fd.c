@@ -6,15 +6,17 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:31:07 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/25 16:36:57 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 18:18:21 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (s)
 	{
 		write(fd, s, ft_strlen(s));
-		write(fd, '\n', 1);
+		write(fd, "\n", 1);
 	}
 }

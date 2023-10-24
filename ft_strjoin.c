@@ -6,9 +6,11 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:48:34 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 15:34:10 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 18:24:34 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -23,9 +25,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	while (s1[i])
-		res[i] = s1[i++];
+	{
+		res[i] = s1[i];
+		i++;
+	}
 	j = 0;
 	while (s2[j])
-		res[i + j] = s2 [j++];
+	{
+		res[i + j] = s2 [j];
+		j++;
+	}
 	res[i + j] = 0;
+	return (res);
 }

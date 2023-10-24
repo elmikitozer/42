@@ -6,9 +6,11 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:25:07 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 13:14:11 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 17:34:19 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

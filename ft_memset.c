@@ -6,9 +6,11 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 12:59:48 by mikayay           #+#    #+#             */
-/*   Updated: 2023/09/14 15:54:16 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 17:34:24 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

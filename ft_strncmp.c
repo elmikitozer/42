@@ -6,11 +6,13 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:53:47 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/11 18:55:25 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 18:04:25 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char s1, const char s2, size_t n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

@@ -6,11 +6,13 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:30:14 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 13:15:09 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 18:41:30 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			i;
 	unsigned char	*ptr;

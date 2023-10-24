@@ -6,9 +6,11 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:21:43 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/11 17:51:30 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 17:35:14 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

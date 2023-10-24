@@ -6,9 +6,11 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:53:12 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/29 16:04:51 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 17:34:27 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

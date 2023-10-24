@@ -6,35 +6,38 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:44:43 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/19 14:11:17 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 19:06:20 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*sub;
-	size_t	i;
+#include "libft.h"
 
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s[i])
-		i++;
-	sub = malloc((sizeof(char) * (i - start)) + 1);
-	if (!sub)
-		return (NULL);
-	if (i < start + len)
-	{
-		i = 0;
-		while (i < len)
-		{
-			sub[i] = s[start + i];
-			i++;
-		}
-		sub[i] = 0;
-		return (sub);
-	}
-}
+// char	*ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	char	*sub;
+// 	size_t	i;
+
+// 	i = 0;
+// 	if (!s)
+// 		return (NULL);
+// 	while (s[i])
+// 		i++;
+// 	sub = malloc((sizeof(char) * (i - start + 1)) + 1);
+// 	if (!sub)
+// 		return (NULL);
+// 	if (i < start + len)
+// 	{
+// 		i = 0;
+// 		while (i < len)
+// 		{
+// 			sub[i] = s[start + i];
+// 			i++;
+// 		}
+// 		sub[i] = 0;
+// 		return (sub);
+// 	}
+// 	return (NULL);
+// }
 
 // char	*ft_substr(char const *s, unsigned int start, size_t len)
 // {
@@ -48,4 +51,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 		return (dst);
 // 	}
 
-// }
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char			*new;
+	unsigned int	i;
+
+	if (start >= ft_strlen(s))
+		len = 0;
+	else if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	new = malloc(sizeof(char) * (len + 1));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (start + i < ft_strlen(s) && i < len)
+	{
+		new[i] = s[start + i];
+		i++;
+	}
+	new[i] = 0;
+	return (new);
+}

@@ -6,9 +6,11 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:11:11 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/22 18:15:18 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 18:12:28 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_len(int nbr)
 {
@@ -25,9 +27,9 @@ static int	ft_len(int nbr)
 	return (len);
 }
 
-static void	process(char *alpha, int *len, int *nbr)
+static void	process(char *alpha, int *len, unsigned int *nbr)
 {
-	while (len >= 0)
+	while (*len >= 0)
 	{
 		alpha[*len] = *nbr % 10 + '0';
 		*nbr = *nbr / 10;
@@ -56,6 +58,6 @@ char	*ft_itoa(int n)
 		return (NULL);
 	process(alpha, &len, &nbr);
 	if (sign == -1)
-		alpha[0];
+		alpha[0] = '-';
 	return (alpha);
 }

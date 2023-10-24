@@ -6,9 +6,11 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 23:01:32 by myevou            #+#    #+#             */
-/*   Updated: 2023/09/11 23:14:20 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/24 17:35:25 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
