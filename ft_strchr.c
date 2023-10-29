@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 23:07:58 by myevou            #+#    #+#             */
-/*   Updated: 2023/10/24 18:47:53 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/29 17:08:29 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,17 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
+	int	len;
 
 	if (!s)
 		return (NULL);
-	i = ft_strlen(s);
-	while (i >= 0)
+	len = ft_strlen(s);
+	i = 0;
+	while (i <= len)
 	{
 		if (s[i] == (char) c)
-			return ((char *) s + i);
-		i--;
+			return ((char *)(s + i));
+		i++;
 	}
 	return (NULL);
 }
