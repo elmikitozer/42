@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:11:11 by myevou            #+#    #+#             */
-/*   Updated: 2023/10/29 17:36:28 by myevou           ###   ########.fr       */
+/*   Updated: 2023/10/29 18:09:37 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,52 +68,57 @@
 // 	printf("%s \n", ft_itoa(321154));
 // }
 
-static	int	ft_itoa_size(int n)
+static unsigned int	get_nb_digit(long n_l, int sign)
 {
-	int	size;
+	unsigned int	nb_digit;
 
-	size = 0;
-	if (n < 0 && n > -2147483648)
-	{
-		size++;
-		n = -n;
-	}
-	else if (n == 0)
+	if (n_l == 0)
 		return (1);
-	else if (n == -2147483648)
-		return (11);
-	while (n >= 1)
+	nb_digit = 0;
+	while (n_l > 0)
 	{
-		n /= 10;
-		size++;
+		n_l /= 10;
+		nb_digit++;
 	}
-	return (size);
+	if (sign == -1)
+		nb_digit++;
+	return (nb_digit);
+}
+
+static void	convert_nb(char *outstr, long n_l, unsigned int nb_digit,
+		int sign)
+{
+	outstr[nb_digit] = '\0';
+	outstr[--nb_digit] = n_l % 10 + '0';
+	n_l /= 10;
+	while (n_l > 0)
+	{
+		outstr[--nb_digit] = n_l % 10 + '0';
+		n_l /= 10;
+	}
+	if (sign == -1)
+		outstr[0] = '-';
 }
 
 char	*ft_itoa(int n)
 {
-	char			*str;
-	int				i;
-	int				size;
-	int				neg;
-	unsigned int	tmp;
+	char			*outstr;
+	long			n_l;
+	unsigned int	nb_digit;
+	int				sign;
 
-	size = ft_itoa_size(n);
-	neg = (n < 0 ? 1 : 0);
-	i = 1;
-	if (!((str = (char *)malloc(sizeof(char) * ft_itoa_size(n) + 1))))
-		return (NULL);
-	tmp = (n < 0 ? -n : n);
-	if (tmp == 0)
-		str[tmp] = '0';
-	while (tmp >= 1)
+	sign = 1;
+	if (n < 0)
 	{
-		str[size - i] = (tmp % 10) + '0';
-		tmp /= 10;
-		i++;
+		n_l = (long)n * -1;
+		sign = -1;
 	}
-	if (neg)
-		*str = '-';
-	str[size] = '\0';
-	return (str);
+	else
+		n_l = n;
+	nb_digit = get_nb_digit(n_l, sign);
+	outstr = malloc(sizeof(char) * (nb_digit + 1));
+	if (!outstr)
+		return (NULL);
+	convert_nb(outstr, n_l, nb_digit, sign);
+	return (outstr);
 }
