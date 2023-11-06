@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 12:44:35 by myevou            #+#    #+#             */
-/*   Updated: 2023/11/06 16:28:01 by myevou           ###   ########.fr       */
+/*   Created: 2023/11/06 16:53:40 by myevou            #+#    #+#             */
+/*   Updated: 2023/11/06 16:58:39 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	unsigned char	*ptr;
-	unsigned char	*ptr2;
-	int				i;
-
-	ptr = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	i = 0;
-	while (n-- > 0)
+	if (lst)
 	{
-		if (ptr[i] == ptr2[i])
-			i++;
-		else
-			return (ptr[i] - ptr2[i]);
+		if (*lst)
+			new->next = *lst;
+		lst->next = new;
 	}
-	return (0);
 }
