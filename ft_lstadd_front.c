@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:53:40 by myevou            #+#    #+#             */
-/*   Updated: 2023/11/06 16:58:39 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/06 18:47:14 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	{
 		if (*lst)
 			new->next = *lst;
-		lst->next = new;
+		*lst = new;
 	}
 }

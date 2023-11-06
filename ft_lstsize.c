@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:45:53 by myevou            #+#    #+#             */
-/*   Updated: 2023/11/06 17:22:39 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/06 18:48:24 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	size_t	count;
 
 	count = 0;
-	while (ptr)
+	while (lst)
 	{
 		lst = lst->next;
 		count++;
