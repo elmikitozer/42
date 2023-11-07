@@ -6,15 +6,21 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:27:55 by myevou            #+#    #+#             */
-/*   Updated: 2023/11/07 16:19:34 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/06 18:42:46 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <stdint.h>
 
 /* libc functions */
 void	*ft_memset(void *b, int c, size_t len);
