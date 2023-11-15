@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:42:55 by myevou            #+#    #+#             */
-/*   Updated: 2023/11/07 18:38:59 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/10 21:00:21 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t
 	size_t	dest_length;
 	size_t	src_length;
 
+	if ((!dst || !src) && !size)
+		return (0);
 	src_length = ft_strlen(src);
 	dest_length = ft_strlen(dst);
 	j = dest_length;

@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:44:43 by myevou            #+#    #+#             */
-/*   Updated: 2023/10/24 19:06:20 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/10 20:41:45 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*new;
 	unsigned int	i;
 
+	if (!s)
+		return (NULL);
 	if (start >= ft_strlen(s))
 		len = 0;
 	else if (len > ft_strlen(s + start))

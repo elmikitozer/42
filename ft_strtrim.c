@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:28:53 by myevou            #+#    #+#             */
-/*   Updated: 2023/10/24 20:05:44 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/10 20:51:39 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,9 +148,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*end;
 	char	*new;
 
+	if (!set || !s1)
+		return (NULL);
 	begin = find_begin(s1, set);
 	end = find_end(s1, set, s1);
-	if (!s1[0] || end < begin)
+	if ((!s1[0] || end < begin))
 	{
 		new = malloc(sizeof(char) * 1);
 		if (!new)

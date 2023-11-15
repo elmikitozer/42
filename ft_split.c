@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:52:23 by myevou            #+#    #+#             */
-/*   Updated: 2023/10/24 19:25:16 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/10 20:52:12 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,8 @@ char	**ft_split(char const *s, char c)
 	size_t	words;
 	char	**tab;
 
+	if (!s)
+		return (NULL);
 	words = count_words(s, c);
 	tab = malloc(sizeof(char *) * (words + 1));
 	if (!tab)

@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:36:02 by myevou            #+#    #+#             */
-/*   Updated: 2023/10/24 18:03:30 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/10 21:03:36 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	if (!dst || !src)
-		return (0);
 	while (src[i] && i + 1 < dstsize)
 	{
 		dst[i] = src[i];

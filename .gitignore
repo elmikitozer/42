@@ -1,0 +1,7 @@
+*.a
+*.o
+*.txt
+*.out
+/libft-war-machine
+/libfTester
+/libf-unit-test

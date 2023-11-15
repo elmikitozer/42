@@ -44,4 +44,8 @@ fclean:	clean;
 
 re:	fclean all
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCSALL)
+	gcc -nostartfiles -shared -o libft.so $(OBJSALL)
+
 .PHONY: all clean fclean re bonus

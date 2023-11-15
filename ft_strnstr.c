@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:09:58 by myevou            #+#    #+#             */
-/*   Updated: 2023/10/24 18:10:03 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/10 21:01:09 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!s1 || !s2)
+	if ((!s1 || !s2) && !len)
 		return (NULL);
 	if (ft_strlen(s2) == 0)
 		return ((char *) s1);

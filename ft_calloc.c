@@ -6,7 +6,7 @@
 /*   By: myevou <myevou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:24:01 by myevou            #+#    #+#             */
-/*   Updated: 2023/10/24 20:06:21 by myevou           ###   ########.fr       */
+/*   Updated: 2023/11/10 19:33:11 by myevou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	*ft_memalloc(size_t size)
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	if (size != 0 && count > ((size_t) -1 / size))
+	if (size != 0 && count > ((size_t) - 1 / size))
 		return (NULL);
 	return (ft_memalloc(count * size));
 }
