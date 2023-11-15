@@ -2,7 +2,7 @@
 *.o
 *.txt
 *.out
-# /libft-war-machin
+/libft-war-machine
 /libfTester
 /libf-unit-test
 libft.so
