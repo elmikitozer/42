@@ -2,6 +2,7 @@
 *.o
 *.txt
 *.out
+*.pdf
 /libft-war-machine
 /libfTester
 /libf-unit-test
